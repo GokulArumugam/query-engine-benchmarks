@@ -18,7 +18,7 @@ Measuring both at two scale factors lets us fit a simple linear model per engine
 3. **Cold vs warm split.** Cold = fresh process, includes startup and first-read (reported separately as fixed overhead). Warm = median of N=5 in-process repeats after 1 discarded warm-up run.
 4. **Correctness gate before timing.** Each engine's result is checksummed against DuckDB's reference output (row count + numeric aggregate within tolerance). A benchmark that returns wrong answers is disqualified, not just slow.
 5. **Environment stamped into results.** Hardware, OS, engine versions, thread counts, memory ceilings recorded in every `results.json`. Runs with other heavy processes are flagged (the harness samples system load).
-6. **All engines get all cores** — default parallel configuration, no per-engine hand-tuning. The one Spark concession: `local[*]` with default shuffle partitions reduced to core count (documented; leaving 200 shuffle partitions on MB data would be a strawman).
+6. **All engines get all cores** — default parallel configuration, no per-engine hand-tuning. Two Spark concessions, both environment provisioning rather than tuning: `local[*]` with shuffle partitions reduced to core count (200 partitions on MB data would be a strawman), and a 3 GB driver heap (the 1 GB default cannot execute Q9's broadcast join at SF 1 on an 8 GB machine — failing an engine for lack of provisioned memory measures the machine, not the engine).
 7. **Reproducible in one command:** `make bench` regenerates data, runs everything, emits `results/results.json` + a markdown summary table.
 
 ## Honest limitations (stated in every post)

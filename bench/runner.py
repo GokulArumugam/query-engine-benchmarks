@@ -94,6 +94,7 @@ class SparkEngine:
         cores = os.cpu_count() or 1
         self.spark = (
             SparkSession.builder.master("local[*]")
+            .config("spark.driver.memory", "3g")
             .appName("query-engine-benchmarks")
             .config("spark.sql.shuffle.partitions", str(cores))
             .getOrCreate()

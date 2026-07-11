@@ -7,6 +7,7 @@ Project 3 of Gokul's DE portfolio (series repo). Site: portfolio-site-eosin-eta.
 ## Status
 - ✅ docs/METHODOLOGY.md — binding contract for the harness and all posts.
 - ✅ Harness code complete pending a live benchmark run: data generation (DuckDB tpch → shared Parquet), auditable DuckDB/Spark SQL + lazy Polars query variants, cold/warm runner, DuckDB correctness gate, environment/load stamp, JSON/Markdown summary, Make targets, and Q6 smoke tests.
+- 🔧 Harness backlog: `ENGINES=` filtered runs REPLACE results.json instead of merging — fine for the methodology (publish single-run numbers only) but surprising; fix or document. Polars Q18 join-coalescing bug fixed (group on left-name keys, rename after).
 - ⬜ NEXT (orchestrator): stop Colima, run `make bench` on this machine, inspect `results/summary.md`, then publish blog post #1 and replace the site stub.
 
 ## Env note
