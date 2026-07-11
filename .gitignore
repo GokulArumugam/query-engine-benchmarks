@@ -1,0 +1,8 @@
+__pycache__/
+.pytest_cache/
+*.py[cod]
+
+# Generated benchmark inputs and run artifacts are intentionally local.
+data/
+results/results.json
+results/summary.md

@@ -1,0 +1,6 @@
+duckdb
+polars
+pyspark
+pyarrow
+psutil
+pytest
