@@ -2,7 +2,7 @@
 
 **Last updated:** 2026-07-11 — harness implementation complete (Codex)
 
-Project 3 of Gokul's DE portfolio (series repo). Site: portfolio-site-eosin-eta.vercel.app (blog stub "duckdb-spark-polars-benchmark" exists — post #1 replaces it). Workflow: orchestrator designs/reviews; Codex implements; live verification before acceptance. Sizing decision (Gokul): MB-scale data on purpose — measure fixed-vs-per-row costs, extrapolate scale in writing.
+Project 3 of Gokul's DE portfolio (series repo). Site: gokularumugam-portfolio-site.vercel.app (blog stub "duckdb-spark-polars-benchmark" exists — post #1 replaces it). Workflow: orchestrator designs/reviews; Codex implements; live verification before acceptance. Sizing decision (Gokul): MB-scale data on purpose — measure fixed-vs-per-row costs, extrapolate scale in writing.
 
 ## Status
 - ✅ docs/METHODOLOGY.md — binding contract for the harness and all posts.
